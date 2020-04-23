@@ -17,7 +17,7 @@
     <mvc:annotation-driven></mvc:annotation-driven>
 
     <!-- 使用默认的Servlet来响应静态文件 -->
-    <mav:default-servlet-handler></mav:default-servlet-handler>
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
 
     <!-- springmvc的视图解析器 -->
     <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -25,4 +25,8 @@
         <property name="suffix" value=".jsp"></property>
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
     </bean>
+
+    <!-- swagger -->
+    <bean class="org.example.ssmDemo.config.Swagger2" />
+
 </beans>

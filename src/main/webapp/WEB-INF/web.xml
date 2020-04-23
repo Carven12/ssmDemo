@@ -64,15 +64,15 @@
     </servlet-mapping>
 
     <!-- Spring 服务层的配置文件 -->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring-mybatis.xml</param-value>
-    </context-param>
+<!--    <context-param>-->
+<!--        <param-name>contextConfigLocation</param-name>-->
+<!--        <param-value>classpath:spring-mybatis.xml</param-value>-->
+<!--    </context-param>-->
 
     <!-- spring监听器 -->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+<!--    <listener>-->
+<!--        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+<!--    </listener>-->
 
     <!-- 集成logback日志框架 -->
     <context-param>
@@ -84,28 +84,28 @@
     </listener>
 
     <!-- druid静态资源 -->
-    <filter>
-        <filter-name>DruidWebStatFilter</filter-name>
-        <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
-        <init-param>
-            <param-name>exclusions</param-name>
-            <param-value>*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>DruidWebStatFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+<!--    <filter>-->
+<!--        <filter-name>DruidWebStatFilter</filter-name>-->
+<!--        <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>-->
+<!--        <init-param>-->
+<!--            <param-name>exclusions</param-name>-->
+<!--            <param-value>*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*</param-value>-->
+<!--        </init-param>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>DruidWebStatFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
 
     <!-- druid的Servlet -->
-    <servlet>
-        <servlet-name>DruidStatView</servlet-name>
-        <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DruidStatView</servlet-name>
-        <url-pattern>/druid/*</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>DruidStatView</servlet-name>-->
+<!--        <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>DruidStatView</servlet-name>-->
+<!--        <url-pattern>/druid/*</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 
 </web-app>

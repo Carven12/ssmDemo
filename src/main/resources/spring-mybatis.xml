@@ -73,7 +73,6 @@
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:mapping/*.xml"></property>
-        <property name="typeAliases" value="org.example.ssmDemo.mapper"></property>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
