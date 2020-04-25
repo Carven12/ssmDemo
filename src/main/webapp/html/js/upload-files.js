@@ -152,8 +152,7 @@ jQuery(function(){
         function uploadFn(obj,i){
 
             var formData = new FormData();
-            formData.append('file', $('#filesBox')[0].files);
-
+            formData.append('files', $('#fileInput')[0].files[i]);
             var progress = obj.find(".progress");			//上传进度背景元素
             var progressNum = obj.find(".progressNum");		//上传进度元素文字
             var oOperation = obj.find("a.operation");		//按钮
