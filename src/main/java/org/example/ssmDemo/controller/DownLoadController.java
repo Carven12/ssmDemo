@@ -11,9 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 
 @Controller
@@ -25,10 +22,11 @@ public class DownLoadController {
     @RequestMapping(value = "/getVerifyCode", method = RequestMethod.GET)
     public ResponseEntity<byte[]> getVerifyCode() {
         String verifyCode = VerifyCode.genRandomCode();
+        LOGGER.info("verifyCode---------->", verifyCode);
         BufferedImage image = VerifyCode.genVerifyCodeImage(verifyCode);
         byte[] imgByte = CommonUtils.imageToBytes(image, "png");
         HttpHeaders headers = new HttpHeaders();
-//        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
         headers.add("Content-Disposition", "attachment;filename=demo.png");
         return new ResponseEntity<byte[]>(imgByte, headers, HttpStatus.CREATED);
     }
