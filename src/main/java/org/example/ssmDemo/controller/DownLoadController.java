@@ -22,7 +22,7 @@ public class DownLoadController {
     @RequestMapping(value = "/getVerifyCode", method = RequestMethod.GET)
     public ResponseEntity<byte[]> getVerifyCode() {
         String verifyCode = VerifyCode.genRandomCode();
-        LOGGER.info("verifyCode---------->", verifyCode);
+        LOGGER.info("verifyCode: {}", verifyCode);
         BufferedImage image = VerifyCode.genVerifyCodeImage(verifyCode);
         byte[] imgByte = CommonUtils.imageToBytes(image, "png");
         HttpHeaders headers = new HttpHeaders();
