@@ -107,5 +107,23 @@
 <!--        <url-pattern>/druid/*</url-pattern>-->
 <!--    </servlet-mapping>-->
 
+    <!-- 利用commons-fileupload实现文件上传 -->
+    <servlet>
+        <servlet-name>MultiFileUploadServlet</servlet-name>
+        <servlet-class>org.example.ssmDemo.servlet.MultiFileUploadServlet</servlet-class>
+        <init-param>
+            <param-name>maxFileSize</param-name>
+            <param-value>1024</param-value>
+        </init-param>
+        <init-param>
+            <param-name>allowFileType</param-name>
+            <param-value>zip</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MultiFileUploadServlet</servlet-name>
+        <url-pattern>/v1/api/fileupload</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
