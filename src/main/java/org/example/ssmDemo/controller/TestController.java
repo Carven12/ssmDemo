@@ -2,9 +2,12 @@ package org.example.ssmDemo.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.ApiOperation;
+import org.example.ssmDemo.entity.Hr;
+import org.example.ssmDemo.mapper.HrMapper;
 import org.example.ssmDemo.model.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +20,15 @@ public class TestController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TestController.class);
 
+    @Autowired
+    HrMapper hrMapper;
+
     @RequestMapping(value="/hello", method= RequestMethod.GET)
     @ApiOperation(value = "接口测试", notes = "接口测试11111")
     public String hello() {
         LOGGER.info("HelloWorld!");
+        Hr hr = hrMapper.getHrById(3L);
+        LOGGER.info(hr.toString());
         return "success";
     }
 

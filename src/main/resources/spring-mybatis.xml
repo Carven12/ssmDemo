@@ -77,7 +77,7 @@
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 自动扫描 org.example.ssmDemo下的interface,并加入IOC容器 -->
-        <property name="basePackage" value="org.example.ssmDemo" />
+        <property name="basePackage" value="org.example.ssmDemo.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
 
