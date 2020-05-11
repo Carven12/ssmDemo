@@ -23,13 +23,14 @@ public class TestController {
     @Autowired
     HrMapper hrMapper;
 
+    @ResponseBody
     @RequestMapping(value="/hello", method= RequestMethod.GET)
     @ApiOperation(value = "接口测试", notes = "接口测试11111")
-    public String hello() {
+    public Hr hello() {
         LOGGER.info("HelloWorld!");
-        Hr hr = hrMapper.getHrById(3L);
+        Hr hr = hrMapper.findHrByName("李白");
         LOGGER.info(hr.toString());
-        return "success";
+        return hr;
     }
 
     @ResponseBody
