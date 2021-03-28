@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>上传文件</title>
+        <link rel="stylesheet" href="css/base.css"/>
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/upload-files.js"></script>
+        <style>
+            .fileBox {
+                margin: 50px;
+            }
+
+            .fileInputP {
+                display: inline-block;
+                width: 200px;
+                height: 30px;
+                border-radius: 5px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .fileInputP i {
+                display: inline-block;
+                width: 200px;
+                height: 30px;
+                color: #fff;
+                background: #7d8f33;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            #fileInput {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+            }
+
+            #fileSpan {
+                display: inline-block;
+                width: 300px;
+                height: 150px;
+                border: 2px dashed #ccc;
+                text-align: center;
+                line-height: 150px;
+            }
+
+            .fileList_parent {
+                margin: 50px;
+                display: none;
+            }
+
+            .fileList_parent th {
+                background: #dadada;
+                font-weight: bold;
+            }
+
+            .fileList_parent th, .fileList_parent td {
+                padding: 5px;
+            }
+
+            .fileList tr:nth-of-type(2n) {
+                background: #dadada;
+            }
+
+            .progressParent {
+                width: 200px;
+                height: 20px;
+                border-radius: 5px;
+                background: #ccc;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .progress {
+                width: 0%;
+                height: 20px;
+                background: #7d8f33;
+            }
+
+            .progressNum {
+                display: inline-block;
+                width: 100%;
+                height: 20px;
+                text-align: center;
+                line-height: 20px;
+                color: #fff;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            #fileBtn {
+                margin-left: 50px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="fileInputP vm">
+            <i>选择文件</i>
+            <input type="file" multiple id="fileInput"/>
+        </p>
+        <span id="fileSpan" class="vm">或者将文件拖到此处</span>
+        <div class="mask"></div>
+        <table width="50%" border="1" class="fileList_parent">
+            <thead>
+            <tr>
+                <th>文件名</th>
+                <th>类型</th>
+                <th>大小</th>
+                <th>私藏</th>
+                <th>进度</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="fileList">
+
+            </tbody>
+        </table>
+        <input type="button" value="上传" id="fileBtn"/>
+    </body>
+</html>
