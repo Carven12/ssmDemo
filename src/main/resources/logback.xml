@@ -15,7 +15,7 @@
     <contextName>sherlon</contextName>
 
     <!-- 定义日志文件 输出位置 -->
-    <property name="log_dir" value="sherlon_log" />
+    <property name="log_dir" value="/opt/cloud/legal/log" />
 
     <!-- ConsoleAppender 控制台输出日志 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
